@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    //weapon
+    public WeaponScript currentWeapon;
     public GameObject bullet;
+    private float nextTimeOfFire = 0;
 
     //moving
     public Animator anim;
@@ -20,9 +22,13 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         //shooting
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            if (Time.time >= nextTimeOfFire)
+            {
+                currentWeapon.Shoot();
+                nextTimeOfFire = Time.time + 1 / currentWeapon.fireRate;
+            }
         }
     }
 

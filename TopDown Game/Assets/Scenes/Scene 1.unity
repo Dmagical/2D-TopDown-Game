@@ -2047,6 +2047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e21ba7c17f4d44b93d6966e0a05662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 11400000, guid: 5e525f875ad337c4484e6a82592a91e5, type: 2}
   bullet: {fileID: 3122307463385083515, guid: ded7bff0ebeded24d821efc69179164e, type: 3}
   anim: {fileID: 1256789906}
   moveSpeed: 6
@@ -2318,7 +2319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830086022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.1, z: 0}
+  m_LocalPosition: {x: -0.03, y: 1.1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
