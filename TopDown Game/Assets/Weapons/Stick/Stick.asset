@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002f0e148ea1eab4aa42becac3d225ae, type: 3}
   m_Name: Stick
   m_EditorClassIdentifier: 
-  currentWeaponSpr: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  currentWeaponSpr: {fileID: 1856511278, guid: e8dcc707165d7c849937958924507f02, type: 3}
+  bulletPrefab: {fileID: 887237231449938318, guid: b93dae4be02ad704cbff272b0a6a9c59,
+    type: 3}
   fireRate: 1
   damage: 20

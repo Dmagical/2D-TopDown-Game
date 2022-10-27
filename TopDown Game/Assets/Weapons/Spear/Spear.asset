@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 002f0e148ea1eab4aa42becac3d225ae, type: 3}
   m_Name: Spear
   m_EditorClassIdentifier: 
-  currentWeaponSpr: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  currentWeaponSpr: {fileID: 1239959499, guid: e8dcc707165d7c849937958924507f02, type: 3}
+  bulletPrefab: {fileID: 7544608403489800304, guid: c63cdb6bc273da8459a4d6a2c83d2dbc,
+    type: 3}
   fireRate: 1
   damage: 20
