@@ -17,7 +17,15 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-     void Update()
+
+
+
+    private void Awake()
+    {
+        //setting sprite of current weapon
+        //get sprite renderer component of "Weapon" and change it to sprite of currentWeapon.currentWeaponSpr
+    }
+    void Update()
     {
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");

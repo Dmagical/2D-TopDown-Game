@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShurikenBullet : MonoBehaviour
+public class BulletMovement : MonoBehaviour
 {
     public float speed = 5;
 
@@ -15,6 +15,7 @@ public class ShurikenBullet : MonoBehaviour
         //get reference to direction
         direction = GameObject.Find("Dir").transform.position;
         transform.position = GameObject.Find("FirePoint").transform.position;
+        transform.eulerAngles = new Vector3(0, 0, GameObject.Find("Player").transform.eulerAngles.z);
     }
 
     // Update is called once per frame
