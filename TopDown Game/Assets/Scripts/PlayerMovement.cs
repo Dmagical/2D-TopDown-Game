@@ -75,24 +75,27 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    //IEnumerator HitBoxOf()
-    //{
-        //hit = false;
-        //yield return new WaitForSeconds(0.7f);
-        //hit = true;
-    //}
+    IEnumerator HitBoxOf()
+    {
+        hit = false;
+        yield return new WaitForSeconds(0.7f);
+        hit = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        while (collision.tag == "Enemy")
+        if (collision.tag == "Enemy")
         {
+            transform.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+            if (hit == true)
+            {
+            StartCoroutine(HitBoxOf());
             health--;
-            //if (hit == true)
-            //{
-                //StartCoroutine(HitBoxOf());
-                //health--;
-            //}
+            transform.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            }
+            
         }
+        
     }
 
 
