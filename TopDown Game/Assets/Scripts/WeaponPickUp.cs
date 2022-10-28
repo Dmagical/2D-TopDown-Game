@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class WeaponPickUp : MonoBehaviour
 {
+    public WeaponScript weapon;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<PlayerMovement>().currentWeapon = weapon;
+            Destroy(gameObject);
+        }
     }
 }

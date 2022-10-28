@@ -17,16 +17,23 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    //grameObject grndchild to use in Update()
+    private GameObject grandChild;
 
-
-
-    private void Awake()
+    private void Start()
     {
-        //setting sprite of current weapon
-        //get sprite renderer component of "Weapon" and change it to sprite of currentWeapon.currentWeaponSpr
+        //ref to "Aim", child of "Player"
+        GameObject child = transform.GetChild(1).gameObject;
+        //ref to "Weapon", child of "Aim", using child gameObject
+        grandChild = child.transform.GetChild(0).gameObject;
     }
+
     void Update()
     {
+        //changes weapon sprite depending on current weapon equipped
+        grandChild.transform.GetComponent<SpriteRenderer>().sprite = currentWeapon.currentWeaponSpr;
+
+
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         //shooting
