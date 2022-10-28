@@ -11,7 +11,7 @@ public class WeaponPickUp : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.GetComponent<PlayerMovement>().currentWeapon = weapon;
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

@@ -16,4 +16,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7544608403489800304, guid: c63cdb6bc273da8459a4d6a2c83d2dbc,
     type: 3}
   fireRate: 1
-  damage: 20
+  damage: 60

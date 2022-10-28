@@ -16,6 +16,8 @@ public class BulletMovement : MonoBehaviour
         direction = GameObject.Find("Dir").transform.position;
         transform.position = GameObject.Find("FirePoint").transform.position;
         transform.eulerAngles = new Vector3(0, 0, GameObject.Find("Player").transform.eulerAngles.z);
+        //destroy after 4 sec
+        Destroy(gameObject, 4);
     }
 
     // Update is called once per frame

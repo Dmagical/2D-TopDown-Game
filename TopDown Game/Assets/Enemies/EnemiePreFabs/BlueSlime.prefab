@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8571701895057338871}
   - component: {fileID: 9025935281071154988}
   - component: {fileID: -8494991502520912150}
+  - component: {fileID: 3743143372288066527}
   m_Layer: 0
   m_Name: BlueSlime
   m_TagString: Enemy
@@ -169,3 +170,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+--- !u!114 &3743143372288066527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655165486068314415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ad6533231ea3b418107a67a841c581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200

@@ -86,12 +86,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            transform.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
             if (hit == true)
             {
             StartCoroutine(HitBoxOf());
             health--;
-            transform.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             }
             
         }
