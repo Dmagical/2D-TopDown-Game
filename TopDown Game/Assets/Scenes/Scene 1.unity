@@ -783,9 +783,9 @@ MonoBehaviour:
   spawnRadius: 15
   time: 1.5
   enemies:
-  - {fileID: 2655165486068314415, guid: ab619fbedb4e6414b91dcb226383c3de, type: 3}
   - {fileID: 4736521661624803797, guid: d31cfce7865a10246919fe6b322f228a, type: 3}
   - {fileID: 8071723090142972753, guid: 959b22613f4703f48b21dc2ba8bdacdc, type: 3}
+  - {fileID: 4191677520317787473, guid: ab619fbedb4e6414b91dcb226383c3de, type: 3}
 --- !u!4 &672294539
 Transform:
   m_ObjectHideFlags: 0
