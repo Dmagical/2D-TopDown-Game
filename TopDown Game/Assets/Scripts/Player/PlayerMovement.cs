@@ -17,10 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    //health
-    private bool hit = true;
-    [SerializeField]
-    private int health;
+    
 
     //grameObject grndchild to use in Update()
     private GameObject grandChild;
@@ -75,26 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    IEnumerator HitBoxOf()
-    {
-        hit = false;
-        yield return new WaitForSeconds(0.7f);
-        hit = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Enemy")
-        {
-            if (hit == true)
-            {
-            StartCoroutine(HitBoxOf());
-            health--;
-            }
-            
-        }
-        
-    }
+    
 
 
 }

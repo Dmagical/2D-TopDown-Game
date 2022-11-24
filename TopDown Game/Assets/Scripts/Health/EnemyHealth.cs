@@ -4,24 +4,35 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField]
-    private float health;
+    public int startHealth;
+    public HealthBar HealthBar;
+    private HealthSystem health;
+
     private Animator anim;
     private BoxCollider2D boxCollider;
+
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+       
+        health = new HealthSystem(startHealth);
+
+        HealthBar.Setup(health);
+
     }
 
     void Update()
     {
-        if (health < 1)
+        //enemy dies
+        if (health.GetHealth() == 0)
         {
             Destroy(boxCollider);
             anim.Play("death");
+            Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject, 1f);
+            
         }
     }
 
@@ -30,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
         if (collision.tag == "Bullet")
         {
             anim.SetTrigger("hit");
-            health -= GameObject.Find("Player").GetComponent<PlayerMovement>().currentWeapon.damage;
+            health.Damage(GameObject.Find("Player").GetComponent<PlayerMovement>().currentWeapon.damage);
             Destroy(collision.gameObject);
         }
 
