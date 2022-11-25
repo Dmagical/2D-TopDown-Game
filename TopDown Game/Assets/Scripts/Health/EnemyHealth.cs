@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        
        
         health = new HealthSystem(startHealth);
 

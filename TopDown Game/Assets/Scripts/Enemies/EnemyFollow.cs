@@ -9,10 +9,11 @@ public class EnemyFollow : MonoBehaviour
     public float speed;
     private Transform playerPos;
     private Rigidbody2D rb;
+    public float stoppingDistance;
 
     private float repelRange = 0.5f;
 
-
+    
     private void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
@@ -34,11 +35,11 @@ public class EnemyFollow : MonoBehaviour
 
     void Update()
     {
-        //if enemy get 0.25f close to player, stop following
-        if (Vector2.Distance(transform.position, playerPos.position) > 0.25f)
+        //if enemy get x close to player, stop following
+        if (Vector2.Distance(transform.position, playerPos.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speed * Time.deltaTime);
-        }
+        } 
     }
 
     private void FixedUpdate()
