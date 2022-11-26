@@ -18,5 +18,6 @@ public class WeaponScript : ScriptableObject
             return;
         }
         Instantiate(bulletPrefab, GameObject.Find("FirePoint").transform.position, Quaternion.identity);
+        AudioManager.manager.Play("Weapon Throw");
     }
 }

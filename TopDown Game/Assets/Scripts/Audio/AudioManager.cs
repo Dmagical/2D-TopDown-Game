@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
 
         }
     }
@@ -43,6 +44,12 @@ public class AudioManager : MonoBehaviour
     {
         //finds sound with name param inside of sounds list and sets it to variabel s
         Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("Sound " + name + " not found, check names");
+            return;
+        }
         s.source.Play();
     }
 
@@ -51,6 +58,14 @@ public class AudioManager : MonoBehaviour
     {
         //finds sound with name param inside of sounds list and sets it to variabel s
         Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s == null)
+        {
+            Debug.Log("Sound " + name + " not found, check names");
+            return;
+        }
         s.source.PlayOneShot(s.clip);
     }
+
+    
 }

@@ -46,12 +46,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //moving
-        if (movement.x != 0 || movement.y != 0)
-        {
-            //plays sound
-            AudioManager.manager.Play("WalkGrass");
-        }
+        
 
     }
 

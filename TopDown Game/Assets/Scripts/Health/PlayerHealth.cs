@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Destroy(gameObject.transform.GetChild(2).gameObject);
             Destroy(gameObject);
+            AudioManager.manager.Play("Player Death");
 
         }
     }
@@ -35,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             health.Damage(10);
+            AudioManager.manager.Play("Player Hit");
         }
 
     }

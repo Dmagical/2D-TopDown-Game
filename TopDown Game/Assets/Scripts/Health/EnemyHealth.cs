@@ -16,17 +16,16 @@ public class EnemyHealth : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
-        
        
         health = new HealthSystem(startHealth);
-
         HealthBar.Setup(health);
 
     }
 
+
+    
     void Update()
     {
-        
         //enemy dies
         if (health.GetHealth() == 0)
         {
@@ -34,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
             anim.Play("death");
             Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject, 1f);
+            AudioManager.manager.Play("Slime Death");
         }
     }
 
@@ -41,10 +41,12 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
+            AudioManager.manager.Play("Slime Hit");
             anim.SetTrigger("hit");
             health.Damage(GameObject.Find("Player").GetComponent<PlayerMovement>().currentWeapon.damage);
             Destroy(collision.gameObject);
         }
 
     }
+
 }
