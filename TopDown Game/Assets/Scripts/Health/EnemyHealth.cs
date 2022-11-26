@@ -26,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
+        
         //enemy dies
         if (health.GetHealth() == 0)
         {
@@ -33,7 +34,6 @@ public class EnemyHealth : MonoBehaviour
             anim.Play("death");
             Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject, 1f);
-            
         }
     }
 

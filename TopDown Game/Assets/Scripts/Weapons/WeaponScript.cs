@@ -12,6 +12,11 @@ public class WeaponScript : ScriptableObject
 
     public void Shoot()
     {
+        if (bulletPrefab == null)
+        {
+            Debug.Log("no weapon equipped!");
+            return;
+        }
         Instantiate(bulletPrefab, GameObject.Find("FirePoint").transform.position, Quaternion.identity);
     }
 }

@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    
-
     //grameObject grndchild to use in Update()
     private GameObject grandChild;
 
@@ -47,10 +45,19 @@ public class PlayerMovement : MonoBehaviour
                 nextTimeOfFire = Time.time + 1 / currentWeapon.fireRate;
             }
         }
+
+        //moving
+        if (movement.x != 0 || movement.y != 0)
+        {
+            //plays sound
+            AudioManager.manager.Play("WalkGrass");
+        }
+
     }
 
     void FixedUpdate()
     {
+        
         //animaiton conditions
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
