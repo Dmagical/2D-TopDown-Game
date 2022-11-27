@@ -9,18 +9,19 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager manager;
 
-
     void Awake()
     {
+        //makes sure one AudioManager exist across scenes
         if (AudioManager.manager == null)
         {
             AudioManager.manager = this;
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
+            return;
         }
-
+        DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in sounds)
         {
