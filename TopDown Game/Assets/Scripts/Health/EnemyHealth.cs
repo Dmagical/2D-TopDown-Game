@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    KillCounter killCounterScript;
+
     public int startHealth;
     public HealthBar HealthBar;
     private HealthSystem health;
@@ -14,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
+        killCounterScript = GameObject.Find("KCO").GetComponent<KillCounter>();
+
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
        
@@ -29,10 +33,12 @@ public class EnemyHealth : MonoBehaviour
         //enemy dies
         if (health.GetHealth() == 0)
         {
+
             Destroy(boxCollider);
             anim.Play("death");
             Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject, 1f);
+            killCounterScript.AddKill();
             AudioManager.manager.Play("Slime Death");
         }
     }
