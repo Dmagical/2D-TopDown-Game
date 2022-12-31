@@ -37,12 +37,16 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         //shooting
-        if (Input.GetMouseButton(0))
+        //if game paused you cant shoot, if not paused you can shoot
+        if (!PauseMenu.isPaused)
         {
-            if (Time.time >= nextTimeOfFire)
+            if (Input.GetMouseButton(0))
             {
-                currentWeapon.Shoot();
-                nextTimeOfFire = Time.time + 1 / currentWeapon.fireRate;
+                if (Time.time >= nextTimeOfFire)
+                {
+                    currentWeapon.Shoot();
+                    nextTimeOfFire = Time.time + 1 / currentWeapon.fireRate;
+                }
             }
         }
 

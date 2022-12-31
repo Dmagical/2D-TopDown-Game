@@ -7,7 +7,7 @@ using TMPro;
 public class KillCounter : MonoBehaviour
 {
     public TextMeshProUGUI counterText;
-    int kills;
+    public static int kills;
 
 
     void Update()
