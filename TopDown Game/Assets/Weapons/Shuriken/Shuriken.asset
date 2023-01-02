@@ -15,5 +15,5 @@ MonoBehaviour:
   currentWeaponSpr: {fileID: 802968912, guid: 6b487d5d140b93f4a80603278cbb3c19, type: 3}
   bulletPrefab: {fileID: 3122307463385083515, guid: ded7bff0ebeded24d821efc69179164e,
     type: 3}
-  fireRate: 3
+  fireRate: 3.5
   damage: 30
