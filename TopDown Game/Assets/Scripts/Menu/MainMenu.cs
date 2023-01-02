@@ -8,10 +8,12 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Game");
+        AudioManager.manager.Play("Menu Confirm");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+        AudioManager.manager.Play("Menu Back");
     }
 }

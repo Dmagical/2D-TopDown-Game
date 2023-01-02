@@ -36,8 +36,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        //add when you get themesong audio
-        //Play(name of theme)
+        Play("Theme");
     }
 
     //sound cant be overriden
