@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int startHealth;
     public HealthBar HealthBar;
-    private HealthSystem health;
+    public static HealthSystem playerHealth;
 
     private BoxCollider2D boxCollider;
 
@@ -14,15 +14,15 @@ public class PlayerHealth : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
 
-        health = new HealthSystem(startHealth);
+        playerHealth = new HealthSystem(startHealth);
 
-        HealthBar.Setup(health);
+        HealthBar.Setup(playerHealth);
     }
 
     void Update()
     {
         //player dies
-        if (health.GetHealth() == 0)
+        if (playerHealth.GetHealth() == 0)
         {
             Destroy(gameObject.transform.GetChild(2).gameObject);
             Destroy(gameObject);
@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            health.Damage(10);
+            playerHealth.Damage(10);
             AudioManager.manager.Play("Player Hit");
         }
 

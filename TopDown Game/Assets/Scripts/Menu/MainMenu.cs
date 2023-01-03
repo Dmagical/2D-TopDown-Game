@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Game");
+        Cursor.visible = false;
         AudioManager.manager.Play("Menu Confirm");
     }
 
