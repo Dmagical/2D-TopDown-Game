@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject GOMenu;
-    
+    public GameObject KCMenu;
     private bool gameOver = false;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,7 @@ public class GameOverMenu : MonoBehaviour
         if (PlayerHealth.playerHealth.GetHealth() == 0 && gameOver == false)
         {
             GOMenu.SetActive(true);
+            KCMenu.SetActive(false);
             Cursor.visible = true;
             gameOver = true;
 
@@ -28,6 +29,7 @@ public class GameOverMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        Cursor.visible = true;
         KillCounter.kills = 0;
         SceneManager.LoadScene("Main Menu");
         AudioManager.manager.Play("Menu Confirm");

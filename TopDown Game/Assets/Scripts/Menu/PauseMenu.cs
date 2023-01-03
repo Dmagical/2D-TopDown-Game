@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        Cursor.visible = true;
         Time.timeScale = 0f;
         isPaused = true;
         AudioManager.manager.Play("Menu Hover");
@@ -40,6 +41,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        Cursor.visible = false;
         Time.timeScale = 1f;
         AudioManager.manager.Play("Menu Back");
         isPaused = false;
@@ -48,6 +50,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        Cursor.visible = true;
         KillCounter.kills = 0;
         SceneManager.LoadScene("Main Menu");
         AudioManager.manager.Play("Menu Confirm");

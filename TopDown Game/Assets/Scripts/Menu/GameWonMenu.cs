@@ -23,6 +23,7 @@ public class GameWonMenu : MonoBehaviour
     public void PlayAgain()
     {
         KillCounter.kills = 0;
+        Cursor.visible = false;
         SceneManager.LoadScene("Game");
         AudioManager.manager.Play("Menu Confirm");
     }
@@ -30,6 +31,7 @@ public class GameWonMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         KillCounter.kills = 0;
+        Cursor.visible = true;
         SceneManager.LoadScene("Main Menu");
         AudioManager.manager.Play("Menu Confirm");
     }
