@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject GOMenu;
-    public GameObject player;
+    
     private bool gameOver = false;
     // Start is called before the first frame update
     void Start()

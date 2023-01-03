@@ -3682,6 +3682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GOMenu: {fileID: 1233118390}
+  player: {fileID: 1256789900}
 --- !u!1 &451601533
 GameObject:
   m_ObjectHideFlags: 0
