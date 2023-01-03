@@ -5,23 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameWonMenu : MonoBehaviour
 {
-    public GameObject winMenu;
-    private bool GameWon = false;
+   
+    
 
 
     void Start()
     {
-        winMenu.SetActive(false);
+        
     }
 
     
     void Update()
     {
-        if (KillCounter.kills == 5 && GameWon == false)
-        {
-            Time.timeScale = 0f;
-            winMenu.SetActive(true);
-        }
+        
     }
 
     public void PlayAgain()
@@ -33,6 +29,7 @@ public class GameWonMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        KillCounter.kills = 0;
         SceneManager.LoadScene("Main Menu");
         AudioManager.manager.Play("Menu Confirm");
     }

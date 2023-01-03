@@ -48,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        KillCounter.kills = 0;
         SceneManager.LoadScene("Main Menu");
         AudioManager.manager.Play("Menu Confirm");
         isPaused = false;

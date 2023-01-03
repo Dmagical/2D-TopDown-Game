@@ -19,6 +19,11 @@ public class KillCounter : MonoBehaviour
         kills++;
     }
 
+
+    public static int GetKills()
+    {
+        return kills;
+    }
     private void ShowKills()
     {
         counterText.text = kills.ToString();

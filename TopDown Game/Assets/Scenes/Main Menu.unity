@@ -693,7 +693,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '- Collect Shuriken At Start
 
-    - Kill 50 Slimes  Without Dying To Win
+    - Kill 30 Slimes  Without Dying To Win
 
 
     CONTROLS:
